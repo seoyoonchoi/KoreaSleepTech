@@ -33,7 +33,7 @@ public class App {
                 int choice = Integer.parseInt(scanner.nextLine());
 
                 switch (choice) {
-                    case 1 -> {
+                    case 1 :{
                         System.out.println("\n===== 회원가입 =====");
                         System.out.print("아이디: ");
                         String userId = scanner.nextLine();
@@ -56,7 +56,7 @@ public class App {
                         userController.service.registerUser(dto);
                         System.out.println("회원가입이 완료되었습니다.");
                     }
-                    case 2 -> {
+                    case 2 : {
                         System.out.println("\n===== 로그인 =====");
                         System.out.print("아이디: ");
                         String userId = scanner.nextLine();
@@ -71,11 +71,11 @@ public class App {
                             System.out.println("로그인 실패! 아이디 또는 비밀번호를 확인하세요.");
                         }
                     }
-                    case 3 -> {
+                    case 3 : {
                         System.out.println("프로그램을 종료합니다.");
                         System.exit(0);
                     }
-                    default -> System.out.println("잘못된 선택입니다.");
+                    default: System.out.println("잘못된 선택입니다.");
                 }
             } else {
                 System.out.println("\n===== 할 일 관리 =====");
@@ -88,7 +88,7 @@ public class App {
                 int taskChoice = Integer.parseInt(scanner.nextLine());
 
                 switch (taskChoice) {
-                    case 1 -> {
+                    case 1 : {
                         System.out.println("\n===== 할 일 추가 =====");
                         System.out.print("할 일 타입 (예: 운동/독서/업무): ");
                         String typeOfList = scanner.nextLine();
@@ -103,7 +103,7 @@ public class App {
                         toDoListController.createTask(dto);
                         System.out.println("할 일이 추가되었습니다!");
                     }
-                    case 2 -> {
+                    case 2 : {
                         System.out.println("\n===== 나의 할 일 목록 =====");
                         List<ToDoListResponseDto> tasks = toDoListController.myTask(loginUserId);
                         if (tasks.isEmpty()) {
@@ -114,7 +114,7 @@ public class App {
                             }
                         }
                     }
-                    case 3 -> {
+                    case 3 : {
                         System.out.println("\n===== 타입별 할 일 조회 =====");
                         System.out.print("조회할 할 일 타입(운동/독서/업무): ");
                         String type = scanner.nextLine();
@@ -127,19 +127,19 @@ public class App {
                             }
                         }
                     }
-                    case 4 -> {
+                    case 4 :{
                         System.out.println("\n===== 할 일 삭제 =====");
                         System.out.print("삭제할 할 일 번호 (ID): ");
                         long id = Long.parseLong(scanner.nextLine());
                         toDoListController.deletetask(id);
                         System.out.println("할 일이 삭제되었습니다!");
                     }
-                    case 5 -> {
+                    case 5 :{
                         loginUserId = null;
                         nickname = null;
                         System.out.println("로그아웃되었습니다.");
                     }
-                    default -> System.out.println("잘못된 선택입니다.");
+                    default: System.out.println("잘못된 선택입니다.");
                 }
             }
         }
